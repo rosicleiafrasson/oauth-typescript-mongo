@@ -1,2 +1,4 @@
 # oauth-typescript-mongo
-Crud usando typescript e mongodb com autenticação oauth2
+
+Crud construído com typescript, express e mongodb com autenticação oauth2 usando GitHub
+
