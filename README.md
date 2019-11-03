@@ -5,7 +5,7 @@
 ## Instalação
 
 ```sh
-docker-compose build
+npm run build
 docker-compose up
 ```
 
