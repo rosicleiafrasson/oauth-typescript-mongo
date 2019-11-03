@@ -1,0 +1,71 @@
+import passport from 'passport';
+/*
+const GooglePlusTokenStrategy = require('passport-google-plus-token');
+const User = require('./models/user');
+
+// Google OAuth Strategy
+passport.use('googleToken', new GooglePlusTokenStrategy({
+    clientID: '595781234930-bej7oqdtefhnrptf7vujhojsk9pe2c4c.apps.googleusercontent.com',
+    clientSecret: 'onnPP6bWQX3OU_HVu84VvnJG',
+    passReqToCallback: true,
+  }, async (req:any, accessToken: any, refreshToken: any, profile: any, done: any) => {
+      console.log('accessToken', accessToken);
+      console.log('refreshToken', refreshToken);
+      console.log('profile', profile);
+    /*
+    try {
+      // Could get accessed in two ways:
+      // 1) When registering for the first time
+      // 2) When linking account to the existing one
+  
+      // Should have full user profile over here
+      console.log('profile', profile);
+      console.log('accessToken', accessToken);
+      console.log('refreshToken', refreshToken);
+  
+      if (req.user) {
+        // We're already logged in, time for linking account!
+        // Add Google's data to an existing account
+        req.user.methods.push('google')
+        req.user.google = {
+          id: profile.id,
+          email: profile.emails[0].value
+        }
+        await req.user.save()
+        return done(null, req.user);
+      } else {
+        // We're in the account creation process
+        let existingUser = await User.findOne({ "google.id": profile.id });
+        if (existingUser) {
+          return done(null, existingUser);
+        }
+  
+        // Check if we have someone with the same email
+        existingUser = await User.findOne({ "local.email": profile.emails[0].value })
+        if (existingUser) {
+          // We want to merge google's data with local auth
+          existingUser.methods.push('google')
+          existingUser.google = {
+            id: profile.id,
+            email: profile.emails[0].value
+          }
+          await existingUser.save()
+          return done(null, existingUser);
+        }
+  
+        const newUser = new User({
+          methods: ['google'],
+          google: {
+            id: profile.id,
+            email: profile.emails[0].value
+          }
+        });
+    
+        await newUser.save();
+        done(null, newUser);
+      }
+    } catch(error) {
+      done(error, false, error.message);
+    }*/
+  }));
+  

@@ -1,0 +1,32 @@
+<div>
+    <div>
+        <div class="card">
+            <div class="card-body">
+                <p class="lead">Editando a Issue</p>
+                <form action="/issues/edit/{{issue._id}}" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="title" placeholder="Título" value="{{issue.title}}"
+                            class="form-control" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="description" placeholder="Descreva seu problema" rows="3">{{issue.description}}</textarea>    
+                    </div>
+                    <div class="form-group">
+                        <span class="badge badge-primary">Criado por: {{issue.userReporter.email}}</span>
+                         {{#if issue.userAssign}}<span class="badge badge-primary">Atribuído a: {{issue.userAssign.email}}</span>{{/if}}
+                    </div> 
+                    <div class="form-group">
+                        <label>Atribuir a: </label>
+                        <select name="userAssignId" class="custom-select mr-sm-2"> 
+                            <option selected>Escolha</option>
+                        {{#each usersFounded}}
+                            <option value="{{id}}">{{email}}</option>                      
+                        {{/each}}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

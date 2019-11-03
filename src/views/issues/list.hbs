@@ -1,0 +1,23 @@
+<div class="mb-3">
+    <a href="/issues/create" class="btn btn-primary btn-lg ">Nova Issue</a>
+</div>
+<div>
+     {{#each issues}}
+     <div class="mb-3">
+        <div class="card">         
+            <div class="card-body">
+                <h3>{{title}}</h3>
+                <hr>
+                <p>{{description}}</p>
+                <span class="badge badge-primary">Criado por: {{userReporter.email}}</span>
+                {{#if userAssign}}<span class="badge badge-primary">Atribuído a: {{userAssign.email}}</span>{{/if}}
+            </div>
+            <div class="card-footer">
+                <a href="/issues/delete/{{_id}}" class="btn btn-dark btn-sm">Delete</a>
+                <a href="/issues/edit/{{_id}}" class="btn btn-dark btn-sm">Edit</a>
+            </div>
+        </div>
+    </div>
+     {{/each}}
+    
+</div>

@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        {{#each errors}}
+            <div class="alert alert-danger">{{text}}</div>
+        {{/each}}
+        
+        <div class="card">
+            <div class="card-body">
+                    <p class="lead">Novo Usuário</p>
+                    <form action="/users/create" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Nome" class="form-control" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" class="form-control" placeholder="Email" required="true">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Senha">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="job" class="form-control" placeholder="Função">
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">
+                        Salvar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="row">
+    {{#each users}}
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <p>{{name}}</p>
+                <p>{{email}}</p>
+                <p>{{job}}</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+                <a href="/users/delete/{{_id}}" class="btn btn-danger">
+                    Delete
+                </a>
+                <a href="/users/edit/{{_id}}" class="btn btn-secondary">
+                    Edit
+                </a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
