@@ -23,3 +23,7 @@ docker-compose up
 - pacote model: contém os esquemas usados pelo mongoose -biblioteca de conexão com mongodb. Nesse pacote estão definidos os modelos dos documentos das coleções do mongodb.
 - pacote routes: Comtém as rotas usadas pelo express para efetuar o tratamento das chamadas get e post da view.
 - pacote config: Contém um arquivos de chaves e o arquivo de configuração do passport, que é um middleware de autenticação usado nesse projeto com autenticação local e autenticação via oauth2.
+
+## Visualização
+
+Projeto disponível em: https://obscure-coast-77066.herokuapp.com (sem a autenticação com o GitHub)
